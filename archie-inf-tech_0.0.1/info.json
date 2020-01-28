@@ -5,7 +5,7 @@
     "title": "Infinite Technology Expanded 2",
     "author": "archie",
     "contact": "blank",
-    "description": "Adds more infinite technology research for Vanilla.  Doesn't properly include yet: Bob's Mods.",
+    "description": "Adds more infinite research.",
     "dependencies":
     [
         "base"
