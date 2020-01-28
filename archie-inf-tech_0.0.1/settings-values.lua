@@ -1,0 +1,1 @@
+disabled_enabled = {"Disabled", "Enabled"}

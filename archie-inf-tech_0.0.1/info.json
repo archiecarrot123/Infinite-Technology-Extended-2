@@ -1,0 +1,13 @@
+{
+    "name": "archie-inf-tech",
+    "version": "0.0.1",
+    "factorio_version": "0.18",
+    "title": "Infinite Technology Expanded 2",
+    "author": "archie",
+    "contact": "blank",
+    "description": "Adds more infinite technology research for Vanilla.  Doesn't properly include yet: Bob's Mods.",
+    "dependencies":
+    [
+        "base"
+    ]
+}
