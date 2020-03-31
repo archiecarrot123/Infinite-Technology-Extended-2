@@ -132,38 +132,6 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
 
         {
             type = "technology",
-            name = "character-logistic-trash-slots-6",
-            icon = "__base__/graphics/technology/character-logistic-trash-slots.png",
-            icon_size = 128,
-            effects =
-            {
-                {
-                    type = "character-logistic-trash-slots",
-                    modifier = 6
-                }
-            },
-            prerequisites = {"character-logistic-trash-slots-5"},
-            unit =
-            {
-                count_formula = "(L-5)*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 30
-            },
-            max_level = 6,
-            upgrade = true,
-            order = "c-k-f-c"
-        },
-
-        {
-            type = "technology",
             name = "research-speed-7",
             icon = "__base__/graphics/technology/research-speed.png",
             icon_size = 128,

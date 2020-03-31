@@ -1,4 +1,0 @@
-0.0.1: 
--- doesn't crash
--- no bob's mods support, as I am unsure of how to do it
--- oh, and did i mention that it is on 0.18 now?
