@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
+Date: 2020.03.31
   Bugfixes:
     - Fixed crash on start by removing obselete research "Character logistic trash slots"
+  Balancing:
+    - Changed character inventory slots bonus to 5 to make it less OP
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1 
   Changes:
     - Updated to 0.18
   Issues:
-    - Bob's mods have updated so much since release, so this mod no longer has support
+    - Bob's mods have updated so much since release, so this mod no longer has support for them

@@ -5,7 +5,7 @@ if modSetting("wit-research-charinvslots").value ~= "Disabled" then
             {
                 type = "technology", name = "character-inventory-slots-1",
                 icon = "__base__/graphics/technology/toolbelt.png", icon_size = 128,
-                effects = {{type = "character-inventory-slots-bonus", modifier = 10}},
+                effects = {{type = "character-inventory-slots-bonus", modifier = 5}},
                 unit = {count = 50, ingredients = {{"automation-science-pack", 1}}, time = 30},
                 order = "c-k-f-a"
             }
@@ -32,7 +32,7 @@ if modSetting("wit-research-charinvslots").value ~= "Disabled" then
                 icon_size = 128,
                 effects =
                 {
-                    {type = "character-inventory-slots-bonus", modifier = 10}
+                    {type = "character-inventory-slots-bonus", modifier = 5}
                 },
                 prerequisites = {"character-inventory-slots-7"},
                 unit =
