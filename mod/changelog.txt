@@ -3,6 +3,8 @@ Version: 0.1.0
   Notes:
     - I just wasted an hour trying to figure out why it wasn't working, turns out Factorio doesn't 
       load outdated mods!
+    - May want to integrate functions that are only used in single files
+    - May want to rename character inventory slots to iterations of toolbelt
   Balancing:
     - Cost growth is now quadratic/exponential for most technologies. List:
       Weapon shooting speed: exponential, 2
@@ -15,6 +17,7 @@ Version: 0.1.0
   Changes:
     - Laser turret speed renamed to laser shooting speed, like in vanilla.
     - Updated to 1.1
+    - Removed unused code.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 2020.03.31

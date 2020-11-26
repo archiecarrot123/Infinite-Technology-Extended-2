@@ -1,4 +1,4 @@
-require("settings-values")
+disabled_enabled = {"Disabled", "Enabled"}
 
 local function wit_newModSetting_startup_string(name, order, default, allowedvalues)
     data:extend({
@@ -12,22 +12,6 @@ local function wit_newModSetting_startup_string(name, order, default, allowedval
         }
     })
 end
-
-local function wcm_newModSetting_startup_int(name, order, type, default, minimumvalue, maximumvalue)
-    data:extend({
-        {
-            name = name,
-            order = order,
-            type = "int-setting",
-            setting_type = "startup",
-            default_value = default,
-            minimum_value = minimumvalue,
-            maximum_value = maximumvalue
-        }
-    })
-end
-
-
 
 wit_newModSetting_startup_string("wit-research-disablemodresearch", "a", "Enabled", disabled_enabled)
 wit_newModSetting_startup_string("wit-research-charinvslots", "b", "Disabled", disabled_enabled)
