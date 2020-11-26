@@ -6,19 +6,34 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             type = "technology",
             name = "weapon-shooting-speed-7",
             icon = "__base__/graphics/technology/weapon-shooting-speed-3.png",
-            icon_size = 128,
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
-                    type = "gun-speed",
-                    ammo_category = "bullet",
-                    modifier = 0.4
+                  type = "gun-speed",
+                  ammo_category = "bullet",
+                  modifier = 0.4
+                },
+                {
+                  type = "gun-speed",
+                  ammo_category = "shotgun-shell",
+                  modifier = 0.4
+                },
+                {
+                  type = "gun-speed",
+                  ammo_category = "cannon-shell",
+                  modifier = 1.5
+                },
+                {
+                  type = "gun-speed",
+                  ammo_category = "rocket",
+                  modifier = 1.3
                 }
             },
             prerequisites = {"weapon-shooting-speed-6"},
             unit =
             {
-                count_formula = "(L-6)*1000",
+                count_formula = "2^(L-7)*1000",
                 ingredients =
                 {
                     {"automation-science-pack", 1},
@@ -37,21 +52,21 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
 
         {
             type = "technology",
-            name = "laser-turret-speed-8",
-            icon = "__base__/graphics/technology/laser-turret-speed.png",
-            icon_size = 128,
+            name = "laser-shooting-speed-8",
+            icon = "__base__/graphics/technology/laser-shooting-speed.png",
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
                     type = "gun-speed",
-                    ammo_category = "laser-turret",
-                    modifier = 1
+                    ammo_category = "laser",
+                    modifier = 0.5
                 }
             },
-            prerequisites = {"laser-turret-speed-7"},
+            prerequisites = {"laser-shooting-speed-7"},
             unit =
             {
-                count_formula = "(L-7)*1000",
+                count_formula = "(L-7)^2*1000",
                 ingredients =
                 {
                     {"automation-science-pack", 1},
@@ -72,7 +87,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             type = "technology",
             name = "worker-robots-storage-4",
             icon = "__base__/graphics/technology/worker-robots-storage.png",
-            icon_size = 128,
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
@@ -102,7 +117,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             type = "technology",
             name = "worker-robots-storage-5",
             icon = "__base__/graphics/technology/worker-robots-storage.png",
-            icon_size = 128,
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
@@ -113,7 +128,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             prerequisites = {"worker-robots-storage-4"},
             unit =
             {
-                count_formula = "(L-4)*1000",
+                count_formula = "(L-4)^2*1000",
                 ingredients =
                 {
                     {"automation-science-pack", 1},
@@ -134,7 +149,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             type = "technology",
             name = "research-speed-7",
             icon = "__base__/graphics/technology/research-speed.png",
-            icon_size = 128,
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
@@ -145,7 +160,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             prerequisites = {"research-speed-6"},
             unit =
             {
-                count_formula = "(L-6)*1000",
+                count_formula = "2^(L-7)*1000",
                 ingredients =
                 {
                     {"automation-science-pack", 1},
@@ -166,7 +181,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             type = "technology",
             name = "braking-force-8",
             icon = "__base__/graphics/technology/braking-force.png",
-            icon_size = 128,
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
@@ -177,7 +192,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             prerequisites = {"braking-force-7"},
             unit =
             {
-                count_formula = "(L-7)*1000",
+                count_formula = "(L-7)^2*1000",
                 ingredients =
                 {
                     {"automation-science-pack", 1},
@@ -198,7 +213,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             type = "technology",
             name = "inserter-capacity-bonus-8",
             icon = "__base__/graphics/technology/inserter-capacity.png",
-            icon_size = 128,
+            icon_size = 256, icon_mipmaps = 4,
             effects =
             {
                 {
@@ -209,7 +224,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
             prerequisites = {"inserter-capacity-bonus-7"},
             unit =
             {
-                count_formula = "(L-7)*1000",
+                count_formula = "3^(L-8)*1000",
                 ingredients =
                 {
                     {"automation-science-pack", 1},
