@@ -1,4 +1,4 @@
-if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
+if modSetting("wit-research-disablemodresearch").value ~= false then
 
     data:extend({
 
@@ -30,7 +30,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
                   modifier = 1.3
                 }
             },
-            prerequisites = {"weapon-shooting-speed-6"},
+            prerequisites = {"weapon-shooting-speed-6", "space-science-pack"},
             unit =
             {
                 count_formula = "2^(L-7)*1000",
@@ -63,7 +63,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
                     modifier = 0.5
                 }
             },
-            prerequisites = {"laser-shooting-speed-7"},
+            prerequisites = {"laser-shooting-speed-7", "space-science-pack"},
             unit =
             {
                 count_formula = "(L-7)^2*1000",
@@ -125,7 +125,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
                     modifier = 1
                 }
             },
-            prerequisites = {"worker-robots-storage-4"},
+            prerequisites = {"worker-robots-storage-4", "space-science-pack"},
             unit =
             {
                 count_formula = "(L-4)^2*1000",
@@ -157,7 +157,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
                     modifier = 1
                 }
             },
-            prerequisites = {"research-speed-6"},
+            prerequisites = {"research-speed-6", "space-science-pack"},
             unit =
             {
                 count_formula = "2^(L-7)*1000",
@@ -189,7 +189,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
                     modifier = 0.25
                 }
             },
-            prerequisites = {"braking-force-7"},
+            prerequisites = {"braking-force-7", "space-science-pack"},
             unit =
             {
                 count_formula = "(L-7)^2*1000",
@@ -221,7 +221,7 @@ if modSetting("wit-research-disablemodresearch").value ~= "Disabled" then
                     modifier = 2
                 }
             },
-            prerequisites = {"inserter-capacity-bonus-7"},
+            prerequisites = {"inserter-capacity-bonus-7", "space-science-pack"},
             unit =
             {
                 count_formula = "3^(L-8)*1000",
