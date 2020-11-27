@@ -4,6 +4,7 @@ Version: 0.1.1
     - Character inventory slots research now called "Toolbelt", doesn't respect locales correctly :(
     - Mod settings are now boolean instead of strings (you might have to re-set it)
     - Removed more unused code
+    - Added thumbnail
   Balancing:
     - Toolbelt 2-4 are removed so that the technology doesn't get cheaper
     - Infinite technologies now require space science technology
