@@ -48,7 +48,7 @@ if modSetting("wit-research-charinvslots").value ~= false then
                 prerequisites = {"toolbelt-4", "space-science-pack"},
                 unit =
                     {
-                        count_formula = "(L-7)*1000",
+                        count_formula = "(L-4)^2*500",
                         ingredients =
                         {
                             {"automation-science-pack", 1},

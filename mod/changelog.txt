@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2020.12.23
+  Bugfixes:
+    - Toolbelt 5 cost error fixed
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2020.11.28
   Changes:
@@ -25,7 +30,7 @@ Date: 2020.11.26
       Research speed: exponential, 2
       Braking force: quadratic
       Inserter capacity bonus: exponential, 3
-    - Laser shooting speed now has a bonus of 0.5 instead of 1.
+      Laser shooting speed now has a bonus of 0.5 instead of 1.
   Changes:
     - Laser turret speed renamed to laser shooting speed, like in vanilla.
     - Updated to 1.1
