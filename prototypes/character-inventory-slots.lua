@@ -12,7 +12,7 @@ function technology_charinvslots(level, count, time, packs)
     })
 end
 
-if modSetting("wit-research-charinvslots").value ~= false then
+if modSetting("ite-research-charinvslots").value ~= false then
 
     if not data.raw.technology["toolbelt-1"] then
         data.raw.technology["toolbelt"].localised_name = "Toolbelt 1"

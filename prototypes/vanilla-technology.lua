@@ -1,11 +1,11 @@
-if modSetting("wit-research-disablemodresearch").value ~= false then
+if modSetting("ite-research-enablemodresearch").value == true then
 
     data:extend({
 
         {
             type = "technology",
             name = "weapon-shooting-speed-7",
-            icon = "__base__/graphics/technology/weapon-shooting-speed-3.png",
+            icons = util.technology_icon_constant_speed("__base__/graphics/technology/weapon-shooting-speed-3.png"),
             icon_size = 256, icon_mipmaps = 4,
             effects =
             {
@@ -53,7 +53,7 @@ if modSetting("wit-research-disablemodresearch").value ~= false then
         {
             type = "technology",
             name = "laser-shooting-speed-8",
-            icon = "__base__/graphics/technology/laser-shooting-speed.png",
+            icons = util.technology_icon_constant_speed("__base__/graphics/technology/laser-shooting-speed.png"),
             icon_size = 256, icon_mipmaps = 4,
             effects =
             {
@@ -86,7 +86,7 @@ if modSetting("wit-research-disablemodresearch").value ~= false then
         {
             type = "technology",
             name = "worker-robots-storage-4",
-            icon = "__base__/graphics/technology/worker-robots-storage.png",
+            icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
             icon_size = 256, icon_mipmaps = 4,
             effects =
             {
@@ -116,7 +116,7 @@ if modSetting("wit-research-disablemodresearch").value ~= false then
         {
             type = "technology",
             name = "worker-robots-storage-5",
-            icon = "__base__/graphics/technology/worker-robots-storage.png",
+            icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
             icon_size = 256, icon_mipmaps = 4,
             effects =
             {
@@ -148,7 +148,7 @@ if modSetting("wit-research-disablemodresearch").value ~= false then
         {
             type = "technology",
             name = "research-speed-7",
-            icon = "__base__/graphics/technology/research-speed.png",
+            icons = util.technology_icon_constant_speed("__base__/graphics/technology/research-speed.png"),
             icon_size = 256, icon_mipmaps = 4,
             effects =
             {
@@ -180,7 +180,7 @@ if modSetting("wit-research-disablemodresearch").value ~= false then
         {
             type = "technology",
             name = "braking-force-8",
-            icon = "__base__/graphics/technology/braking-force.png",
+            icons = util.technology_icon_constant_braking_force("__base__/graphics/technology/braking-force.png"),
             icon_size = 256, icon_mipmaps = 4,
             effects =
             {

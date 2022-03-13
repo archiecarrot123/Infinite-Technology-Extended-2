@@ -1,3 +1,5 @@
+require "util"
+
 require("functions.basic")
 
 require("prototypes.vanilla-technology")
