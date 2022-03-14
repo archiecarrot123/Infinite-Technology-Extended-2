@@ -1,246 +1,126 @@
-if modSetting("ite-research-enablemodresearch").value == true then
+--This file adds to the vanilla techs
+if modSetting("enablemodresearch").value == true then --if the infinite research is enabled in the startup settings
+    --note: if you're looking for the conditions, they're in functions.basic
+    add_infinite_technology("weapon-shooting-speed", 
+                            7,
+                            util.technology_icon_constant_speed("__base__/graphics/technology/weapon-shooting-speed-3.png"), 
+                            {   {   type = "gun-speed",
+                                    ammo_category = "bullet",
+                                    modifier = 0.4
+                                },  
+                                {   type = "gun-speed",
+                                    ammo_category = "shotgun-shell",
+                                    modifier = 0.4
+                                },  
+                                {   type = "gun-speed",
+                                    ammo_category = "cannon-shell",
+                                    modifier = 1.5
+                                },  
+                                {   type = "gun-speed",
+                                    ammo_category = "rocket",
+                                    modifier = 1.3
+                                }
+                            },
+                            "2^(L-7)*1000",
+                            true,
+                            "e-l-g"
+                            )
 
-    data:extend({
+    add_infinite_technology("laser-shooting-speed", 
+                            8,
+                            util.technology_icon_constant_speed("__base__/graphics/technology/laser-shooting-speed.png"), 
+                            {   {   type = "gun-speed",
+                                    ammo_category = "laser",
+                                    modifier = 0.5
+                                }
+                            },
+                            "(L-7)^2*1000",
+                            true,
+                            "e-l-g"
+                            )
+    
+    add_infinite_technology("worker-robots-storage", 
+                            5,
+                            util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"), 
+                            {   {   type = "worker-robot-storage",
+                                    modifier = 1
+                                }
+                            },
+                            "(L-4)^2*1000",
+                            false,
+                            "c-k-g-e"
+                            )
 
-        {
-            type = "technology",
-            name = "weapon-shooting-speed-7",
-            icons = util.technology_icon_constant_speed("__base__/graphics/technology/weapon-shooting-speed-3.png"),
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
+    add_infinite_technology("research-speed", 
+                            7,
+                            util.technology_icon_constant_speed("__base__/graphics/technology/research-speed.png"), 
+                            {   {   type = "laboratory-speed",
+                                    modifier = 1
+                                }
+                            },
+                            "2^(L-7)*1000",
+                            false,
+                            "c-m-e"
+                            )
+
+    add_infinite_technology("braking-force", 
+                            8,
+                            util.technology_icon_constant_braking_force("__base__/graphics/technology/braking-force.png"), 
+                            {   {   type = "train-braking-force-bonus",
+                                    modifier = 0.25
+                                }
+                            },
+                            "(L-7)^2*1000",
+                            false,
+                            "b-f-h"
+                            )
+
+    add_infinite_technology("inserter-capacity-bonus", 
+                            8,
+                            util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"), 
+                            {   {   type = "stack-inserter-capacity-bonus",
+                                    modifier = 2
+                                }
+                            },
+                            "3^(L-8)*1000",
+                            false,
+                            "c-o-i"
+                            )
+
+    if modSetting("worker-robots-storage").value == true then
+        data:extend({ --this adds to the table of prototypes (data.raw)
+        
             {
+                type = "technology",
+                name = "worker-robots-storage-4",
+                icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
+                icon_size = 256, icon_mipmaps = 4,
+                effects =
                 {
-                  type = "gun-speed",
-                  ammo_category = "bullet",
-                  modifier = 0.4
+                    {
+                        type = "worker-robot-storage",
+                        modifier = 1
+                    }
                 },
+                prerequisites = {"worker-robots-storage-3"},
+                unit =
                 {
-                  type = "gun-speed",
-                  ammo_category = "shotgun-shell",
-                  modifier = 0.4
+                    count = 750,
+                    ingredients =
+                    {
+                        {"automation-science-pack", 1},
+                        {"logistic-science-pack", 1},
+                        {"chemical-science-pack", 1},
+                        {"production-science-pack", 1},
+                        {"utility-science-pack", 1}
+                    },
+                    time = 60
                 },
-                {
-                  type = "gun-speed",
-                  ammo_category = "cannon-shell",
-                  modifier = 1.5
-                },
-                {
-                  type = "gun-speed",
-                  ammo_category = "rocket",
-                  modifier = 1.3
-                }
-            },
-            prerequisites = {"weapon-shooting-speed-6", "space-science-pack"},
-            unit =
-            {
-                count_formula = "2^(L-7)*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"military-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 60
-            },
-            max_level = "infinite",
             upgrade = true,
-            order = "e-l-g"
-        },
+            order = "c-k-g-d"
+            }
 
-        {
-            type = "technology",
-            name = "laser-shooting-speed-8",
-            icons = util.technology_icon_constant_speed("__base__/graphics/technology/laser-shooting-speed.png"),
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
-            {
-                {
-                    type = "gun-speed",
-                    ammo_category = "laser",
-                    modifier = 0.5
-                }
-            },
-            prerequisites = {"laser-shooting-speed-7", "space-science-pack"},
-            unit =
-            {
-                count_formula = "(L-7)^2*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"military-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 60
-            },
-            max_level = "infinite",
-            upgrade = true,
-            order = "e-n-o"
-        },
-
-        {
-            type = "technology",
-            name = "worker-robots-storage-4",
-            icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
-            {
-                {
-                    type = "worker-robot-storage",
-                    modifier = 1
-                }
-            },
-            prerequisites = {"worker-robots-storage-3"},
-            unit =
-            {
-                count = 750,
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"utility-science-pack", 1}
-                },
-                time = 60
-            },
-        upgrade = true,
-        order = "c-k-g-d"
-        },
-
-        {
-            type = "technology",
-            name = "worker-robots-storage-5",
-            icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
-            {
-                {
-                    type = "worker-robot-storage",
-                    modifier = 1
-                }
-            },
-            prerequisites = {"worker-robots-storage-4", "space-science-pack"},
-            unit =
-            {
-                count_formula = "(L-4)^2*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 60
-            },
-        upgrade = true,
-        max_level = "infinite",
-        order = "c-k-g-e"
-        },
-
-        {
-            type = "technology",
-            name = "research-speed-7",
-            icons = util.technology_icon_constant_speed("__base__/graphics/technology/research-speed.png"),
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
-            {
-                {
-                    type = "laboratory-speed",
-                    modifier = 1
-                }
-            },
-            prerequisites = {"research-speed-6", "space-science-pack"},
-            unit =
-            {
-                count_formula = "2^(L-7)*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 30
-            },
-            max_level = "infinite",
-            upgrade = true,
-            order = "c-m-e"
-        },
-
-        {
-            type = "technology",
-            name = "braking-force-8",
-            icons = util.technology_icon_constant_braking_force("__base__/graphics/technology/braking-force.png"),
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
-            {
-                {
-                    type = "train-braking-force-bonus",
-                    modifier = 0.25
-                }
-            },
-            prerequisites = {"braking-force-7", "space-science-pack"},
-            unit =
-            {
-                count_formula = "(L-7)^2*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 60
-            },
-            max_level = "infinite",
-            upgrade = true,
-            order = "b-f-h"
-        },
-
-        {
-            type = "technology",
-            name = "inserter-capacity-bonus-8",
-            icon = "__base__/graphics/technology/inserter-capacity.png",
-            icon_size = 256, icon_mipmaps = 4,
-            effects =
-            {
-                {
-                    type = "stack-inserter-capacity-bonus",
-                    modifier = 2
-                }
-            },
-            prerequisites = {"inserter-capacity-bonus-7", "space-science-pack"},
-            unit =
-            {
-                count_formula = "3^(L-8)*1000",
-                ingredients =
-                {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1}
-                },
-                time = 30
-            },
-            max_level = "infinite",
-            upgrade = true,
-            order = "c-o-i"
-        }
-
-    })
+        })
+    end
 
 end
