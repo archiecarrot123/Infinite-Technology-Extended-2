@@ -2,7 +2,7 @@ require "util"
 
 require("functions.basic")
 
-if modSetting("ite-research-compat").value == true then
+if modSetting("ite-research-compat").value == true and modSetting("ite-research-enablemodresearch").value == true then
     if data.raw["technology"]["braking-force-8"].max_level ~= "infinite" then
         data:extend({{
             type = "technology",
