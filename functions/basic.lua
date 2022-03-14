@@ -1,4 +1,5 @@
 function modSetting(modsetting) return settings.startup["ite-research-"..modsetting] end --this function returns the mod setting (only works for startup settings)
+function bonusSetting(modsetting) return settings.startup["ite-bonus-"..modsetting] end --this function returns the mod setting (only works for startup settings)
 
 function add_infinite_technology(tname, tlevel, ticons, teffects,--[[ tprerequisites,--]] tformula, tmilitary,--[[ tinfinite,--]] torder, ttime) --A function that makes this "easier"
     if modSetting(tname).value == true then

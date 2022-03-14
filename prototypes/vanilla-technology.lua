@@ -6,19 +6,19 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             util.technology_icon_constant_speed("__base__/graphics/technology/weapon-shooting-speed-3.png"), 
                             {   {   type = "gun-speed",
                                     ammo_category = "bullet",
-                                    modifier = 0.4
+                                    modifier = bonusSetting("bullet").value
                                 },  
                                 {   type = "gun-speed",
                                     ammo_category = "shotgun-shell",
-                                    modifier = 0.4
+                                    modifier = bonusSetting("shotgun").value
                                 },  
                                 {   type = "gun-speed",
                                     ammo_category = "cannon-shell",
-                                    modifier = 1.5
+                                    modifier = bonusSetting("cannon").value
                                 },  
                                 {   type = "gun-speed",
                                     ammo_category = "rocket",
-                                    modifier = 1.3
+                                    modifier = bonusSetting("rocket").value
                                 }
                             },
                             "2^(L-7)*1000",
@@ -31,7 +31,7 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             util.technology_icon_constant_speed("__base__/graphics/technology/laser-shooting-speed.png"), 
                             {   {   type = "gun-speed",
                                     ammo_category = "laser",
-                                    modifier = 0.5
+                                    modifier = bonusSetting("laser").value
                                 }
                             },
                             "(L-7)^2*1000",
@@ -43,7 +43,7 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             5,
                             util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"), 
                             {   {   type = "worker-robot-storage",
-                                    modifier = 1
+                                    modifier = bonusSetting("worker-robot-storage").value
                                 }
                             },
                             "(L-4)^2*1000",
@@ -55,7 +55,7 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             7,
                             util.technology_icon_constant_speed("__base__/graphics/technology/research-speed.png"), 
                             {   {   type = "laboratory-speed",
-                                    modifier = 1
+                                    modifier = bonusSetting("laboratory-speed").value
                                 }
                             },
                             "2^(L-7)*1000",
@@ -67,21 +67,32 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             8,
                             util.technology_icon_constant_braking_force("__base__/graphics/technology/braking-force.png"), 
                             {   {   type = "train-braking-force-bonus",
-                                    modifier = 0.25
+                                    modifier = bonusSetting("train-braking-force-bonus").value
                                 }
                             },
                             "(L-7)^2*1000",
                             false,
                             "b-f-h"
                             )
-
+    
+    if bonusSetting("inserter-stack-size-bonus").value == 0 then --this is a workaround to stop the inserter stack size bonus showing up when it is 0
+        effects =   {   {   type = "stack-inserter-capacity-bonus",
+                            modifier = bonusSetting("stack-inserter-capacity-bonus").value
+                        }
+                    }
+    else
+        effects =   {   {   type = "stack-inserter-capacity-bonus",
+                            modifier = bonusSetting("stack-inserter-capacity-bonus").value
+                        },
+                        {   type = "inserter-stack-size-bonus",
+                            modifier = bonusSetting("inserter-stack-size-bonus").value
+                        }
+                    }
+    end
     add_infinite_technology("inserter-capacity-bonus", 
                             8,
                             util.technology_icon_constant_stack_size("__base__/graphics/technology/inserter-capacity.png"), 
-                            {   {   type = "stack-inserter-capacity-bonus",
-                                    modifier = 2
-                                }
-                            },
+                            effects,
                             "3^(L-8)*1000",
                             false,
                             "c-o-i"
@@ -99,7 +110,7 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                 {
                     {
                         type = "worker-robot-storage",
-                        modifier = 1
+                        modifier = bonusSetting("worker-robot-storage").value
                     }
                 },
                 prerequisites = {"worker-robots-storage-3"},
