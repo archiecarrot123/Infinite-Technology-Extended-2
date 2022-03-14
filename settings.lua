@@ -12,3 +12,4 @@ end
 
 ite_newModSetting_startup_bool("ite-research-enablemodresearch", "a", true)
 ite_newModSetting_startup_bool("ite-research-charinvslots", "b", true)
+ite_newModSetting_startup_bool("ite-research-compat", "c", false)
