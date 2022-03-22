@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2022.03.22
+  Major Features:
+    - Added mod settings to allow turning features of the mod on and off
+    - Added mod settings to allow changing of the effects of research
+  Bugfixes:
+    - Technology icons now have that little thing in the bottom right like vanilla ones
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 2020.12.23
   Bugfixes:
