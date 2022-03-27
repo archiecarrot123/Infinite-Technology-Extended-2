@@ -2,7 +2,7 @@ function modSetting(modsetting) return settings.startup["ite-research-"..modsett
 function bonusSetting(modsetting) return settings.startup["ite-bonus-"..modsetting] end --this function returns the mod setting (only works for startup settings)
 
 function add_infinite_technology(tname, tlevel, ticons, teffects,--[[ tprerequisites,--]] tformula, tmilitary,--[[ tinfinite,--]] torder, ttime) --A function that makes this "easier"
-    if modSetting(tname).value == true then
+    if modSetting(tname).value and not (data.raw["technology"][tname.."-"..(tlevel-1)].max_level == "infinite") == true then
         local ttable = {
             type = "technology",
             name = tname.."-"..tlevel,

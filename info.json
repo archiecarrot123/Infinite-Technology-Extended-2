@@ -8,6 +8,7 @@
     "description": "Adds more infinite research. Customizable in mod settings",
     "dependencies":
     [
-        "base"
+        "base",
+        "(?) 5dim_infiniteresearch"
     ]
 }
