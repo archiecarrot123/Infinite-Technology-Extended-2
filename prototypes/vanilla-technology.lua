@@ -38,7 +38,42 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             true,
                             "e-l-g"
                             )
-    
+                            
+        if (modSetting("worker-robots-storage").value == true) and not data.raw["technology"]["worker-robots-storage-4"] then
+        data:extend({ --this adds to the table of prototypes (data.raw)
+        
+            {
+                type = "technology",
+                name = "worker-robots-storage-4",
+                icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
+                icon_size = 256, icon_mipmaps = 4,
+                effects =
+                {
+                    {
+                        type = "worker-robot-storage",
+                        modifier = bonusSetting("worker-robot-storage").value
+                    }
+                },
+                prerequisites = {"worker-robots-storage-3"},
+                unit =
+                {
+                    count = 750,
+                    ingredients =
+                    {
+                        {"automation-science-pack", 1},
+                        {"logistic-science-pack", 1},
+                        {"chemical-science-pack", 1},
+                        {"production-science-pack", 1},
+                        {"utility-science-pack", 1}
+                    },
+                    time = 60
+                },
+            upgrade = true,
+            order = "c-k-g-d"
+            }
+
+        })
+    end
     add_infinite_technology("worker-robots-storage", 
                             5,
                             util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"), 
@@ -97,41 +132,5 @@ if modSetting("enablemodresearch").value == true then --if the infinite research
                             false,
                             "c-o-i"
                             )
-
-    if modSetting("worker-robots-storage").value == true then
-        data:extend({ --this adds to the table of prototypes (data.raw)
-        
-            {
-                type = "technology",
-                name = "worker-robots-storage-4",
-                icons = util.technology_icon_constant_capacity("__base__/graphics/technology/worker-robots-storage.png"),
-                icon_size = 256, icon_mipmaps = 4,
-                effects =
-                {
-                    {
-                        type = "worker-robot-storage",
-                        modifier = bonusSetting("worker-robot-storage").value
-                    }
-                },
-                prerequisites = {"worker-robots-storage-3"},
-                unit =
-                {
-                    count = 750,
-                    ingredients =
-                    {
-                        {"automation-science-pack", 1},
-                        {"logistic-science-pack", 1},
-                        {"chemical-science-pack", 1},
-                        {"production-science-pack", 1},
-                        {"utility-science-pack", 1}
-                    },
-                    time = 60
-                },
-            upgrade = true,
-            order = "c-k-g-d"
-            }
-
-        })
-    end
 
 end
