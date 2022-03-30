@@ -14,12 +14,7 @@ end
 
 if modSetting("charinvslots").value == true then --if the caracter inventory slots research is enabled in the startup settings
 
-    if not data.raw.technology["toolbelt-1"] then
-        data.raw.technology["toolbelt-1"] = data.raw.technology["toolbelt"] --what i'm doing here with the toolbelt might be a bit dodgy
-        data.raw.technology["toolbelt"] = nil
-        data.raw.technology["toolbelt-1"].name = "toolbelt-1"
-        data.raw.technology["toolbelt-1"].upgrade = true
-
+    if data.raw.technology["toolbelt"] or data.raw.technology["toolbelt-1"] then
         technology_charinvslots(2, 100, 30)
         data.raw.technology["toolbelt-2"].unit.ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}, {"chemical-science-pack", 1}}
         technology_charinvslots(3, 250, 30)

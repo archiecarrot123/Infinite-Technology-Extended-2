@@ -17,3 +17,10 @@ if modSetting("compat").value == true and modSetting("enablemodresearch").value 
                                 )
     end
 end
+
+if data.raw.technology["toolbelt"] and not data.raw.technology["toolbelt-1"] and modSetting("charinvslots").value then
+    data.raw.technology["toolbelt-1"] = data.raw.technology["toolbelt"] --what i'm doing here with the toolbelt might be a bit dodgy
+    data.raw.technology["toolbelt"] = nil
+    data.raw.technology["toolbelt-1"].name = "toolbelt-1"
+    data.raw.technology["toolbelt-1"].upgrade = true
+end
