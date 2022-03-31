@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2022.03.31
+  Modding:
+    - All technologies introduced before data-updates should be automatically
+      updated to use toolbelt-1 instead of toolbelt in prerequisites
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2022.03.22
   Major Features:
