@@ -23,4 +23,14 @@ if data.raw.technology["toolbelt"] and not data.raw.technology["toolbelt-1"] and
     data.raw.technology["toolbelt"] = nil
     data.raw.technology["toolbelt-1"].name = "toolbelt-1"
     data.raw.technology["toolbelt-1"].upgrade = true
+    
+    for tkey,tech in pairs(data.raw.technology) do
+        if tech.prerequisites then
+            for pkey,prereq in pairs(tech.prerequisites) do
+                if prereq == "toolbelt" then
+                    data.raw.technology[tkey].prerequisites[pkey] = "toolbelt-1"
+                end
+            end
+        end
+    end
 end
